@@ -3,7 +3,9 @@ def help_games
 end
 
 def list_games()
+  # list of games array
   list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
+  # Print each game of the list_of_games array on a new line
   list_of_games.each do |game| puts "#{game}".upcase end
 end
 
@@ -22,13 +24,16 @@ def logon
       puts "Greeting Professor Falken.".upcase
       # break out of the loop
       break
-    # if user is equal to "help"
+    # Otherwise, if user is equal to "help"
     elsif user == "help"
       puts "No help available.".upcase
+    # Otherwise, if user is equal to "help games"
     elsif user == "help games"
       help_games()
+    # Otherwise, if user is equal to "list games"
     elsif user == "list games"
       list_games()
+    # Otherwise
     else
       puts "Connection terminated".upcase
       break
