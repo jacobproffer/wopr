@@ -2,7 +2,7 @@ def help_games
   puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
 end
 
-def list_games()
+def list_games
   # list of games array
   list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   # Print each game of the list_of_games array on a new line
@@ -52,5 +52,9 @@ def logon
 end
 
 if logon()
+  # if logon returns true
   puts "Test passes."
+else
+  # if logon returns false
+  puts "Test fails."
 end
