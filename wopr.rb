@@ -1,7 +1,10 @@
+# help games function
 def help_games
   puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
 end
 
+
+# list games function
 def list_games
   # list of games array
   list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
@@ -9,6 +12,7 @@ def list_games
   list_of_games.each do |game| puts "#{game}".upcase end
 end
 
+# logon function
 def logon
   # authorized_user
   authorized_user = false
@@ -22,8 +26,6 @@ def logon
     user = gets.chomp.downcase
     # if user is equal to "joshua"
     if user == "joshua"
-      # print the string
-      puts "Greeting Professor Falken.".upcase
       # set condition of authorized_user
       authorized_user = true
       # break out of the loop
@@ -51,10 +53,29 @@ def logon
   return authorized_user
 end
 
+# response function
+def response
+  response = gets.chomp.downcase
+  return response
+end
+
+# greet user function
+def greet_user
+  # print the string
+  puts "Greeting Professor Falken.".upcase
+  response()
+  puts "How are you feeling today?".upcase
+  response()
+  puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
+  if response() == "people make mistakes".downcase
+    puts "Yes they do.".upcase
+  else
+    puts "I'm sure you had your reasons.".upcase
+  end
+end
+
+# if logon returns true
 if logon()
-  # if logon returns true
-  puts "Test passes."
-else
-  # if logon returns false
-  puts "Test fails."
+  # call greet_user function
+  greet_user
 end
