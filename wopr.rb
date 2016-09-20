@@ -74,8 +74,17 @@ def greet_user
   end
 end
 
+# play game function
+def play_game
+  puts "Shall we play a game?".upcase
+end
+
 # if logon returns true
 if logon()
   # call greet_user function
-  greet_user
+  greet_user()
+  # pause 1 second
+  sleep 1
+  # call play_game function
+  play_game()
 end
