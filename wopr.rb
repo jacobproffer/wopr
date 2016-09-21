@@ -1,90 +1,101 @@
-# help games function
-def help_games
-  puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
-end
+class WOPR
 
+  attr_accessor :games
 
-# list games function
-def list_games
-  # list of games array
-  list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
-  # Print each game of the list_of_games array on a new line
-  list_of_games.each do |game| puts "#{game}".upcase end
-end
+  def initialize(games)
+    @games = games
+  end
 
-# logon function
-def logon
-  # authorized_user
-  authorized_user = false
-  # user variable
-  user = ""
-  # while user is not equal to "joshua"
-  while user != "joshua" && authorized_user == false
-    # prompt the user to log on
-    print "Logon: ".upcase
-    # store user input in variable user
-    user = gets.chomp.downcase
-    # if user is equal to "joshua"
-    if user == "joshua"
-      # set condition of authorized_user
-      authorized_user = true
-      # break out of the loop
-      break
-    # Otherwise, if user is equal to "help"
-    elsif user == "help"
-      # print the string
-      puts "No help available.".upcase
-    # Otherwise, if user is equal to "help games"
-    elsif user == "help games"
-      # call the help_games function
-      help_games()
-    # Otherwise, if user is equal to "list games"
-    elsif user == "list games"
-      # call the list_games function
-      list_games()
-    # Otherwise
+  # help games function
+  def help_games
+    puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
+  end
+
+  # list games function
+  def list_games(games)
+    # Print each game of the list_of_games array on a new line
+    games.each do |game| puts "#{game}".upcase end
+  end
+
+  # logon function
+  def logon
+    # authorized_user
+    authorized_user = false
+    # user variable
+    user = ""
+    # while user is not equal to "joshua"
+    while user != "joshua" && authorized_user == false
+      # prompt the user to log on
+      print "Logon: ".upcase
+      # store user input in variable user
+      user = gets.chomp.downcase
+      # if user is equal to "joshua"
+      if user == "joshua"
+        # set condition of authorized_user
+        authorized_user = true
+        # break out of the loop
+        break
+      # Otherwise, if user is equal to "help"
+      elsif user == "help"
+        # print the string
+        puts "No help available.".upcase
+      # Otherwise, if user is equal to "help games"
+      elsif user == "help games"
+        # call the help_games function
+        help_games()
+      # Otherwise, if user is equal to "list games"
+      elsif user == "list games"
+        # call the list_games function
+        list_games(@games)
+      # Otherwise
+      else
+        # print the string
+        puts "Connection terminated".upcase
+        # break out of the loop
+        break
+      end
+    end
+    return authorized_user
+  end
+
+  # response function
+  def response
+    response = gets.chomp.downcase
+    return response
+  end
+
+  # greet user function
+  def greet_user
+    # print the string
+    puts "Greeting Professor Falken.".upcase
+    response()
+    puts "How are you feeling today?".upcase
+    response()
+    puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
+    if response() == "people make mistakes".downcase
+      puts "Yes they do.".upcase
     else
-      # print the string
-      puts "Connection terminated".upcase
-      # break out of the loop
-      break
+      puts "I'm sure you had your reasons.".upcase
     end
   end
-  return authorized_user
-end
 
-# response function
-def response
-  response = gets.chomp.downcase
-  return response
-end
-
-# greet user function
-def greet_user
-  # print the string
-  puts "Greeting Professor Falken.".upcase
-  response()
-  puts "How are you feeling today?".upcase
-  response()
-  puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
-  if response() == "people make mistakes".downcase
-    puts "Yes they do.".upcase
-  else
-    puts "I'm sure you had your reasons.".upcase
+  # play game function
+  def play_game
+    puts "Shall we play a game?".upcase
   end
+
 end
 
-# play game function
-def play_game
-  puts "Shall we play a game?".upcase
-end
+list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
+
+wopr = WOPR.new(list_of_games)
 
 # if logon returns true
-if logon()
+if wopr.logon
   # call greet_user function
-  greet_user()
+  wopr.greet_user
   # pause 1 second
   sleep 1
   # call play_game function
-  play_game()
+  wopr.play_game
 end
