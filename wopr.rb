@@ -1,9 +1,9 @@
 class WOPR
 
-  attr_accessor :games
+  # attr_accessor :games
 
-  def initialize(games)
-    @games = games
+  def initialize()
+    @list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   end
 
   # help games function
@@ -12,9 +12,9 @@ class WOPR
   end
 
   # list games function
-  def list_games(games)
+  def list_games()
     # Print each game of the list_of_games array on a new line
-    games.each do |game| puts "#{game}".upcase end
+    @list_of_games.each do |game| puts "#{game}".upcase end
   end
 
   # logon function
@@ -46,7 +46,7 @@ class WOPR
       # Otherwise, if user is equal to "list games"
       elsif user == "list games"
         # call the list_games function
-        list_games(@games)
+        list_games()
       # Otherwise
       else
         # print the string
@@ -86,9 +86,7 @@ class WOPR
 
 end
 
-list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
-
-wopr = WOPR.new(list_of_games)
+wopr = WOPR.new()
 
 # if logon returns true
 if wopr.logon
