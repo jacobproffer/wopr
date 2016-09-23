@@ -1,8 +1,9 @@
 class WOPR
 
-  # attr_accessor :games
+  attr_accessor :list_of_games
 
   def initialize()
+    # list of games array
     @list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   end
 
@@ -14,7 +15,7 @@ class WOPR
   # list games function
   def list_games()
     # Print each game of the list_of_games array on a new line
-    @list_of_games.each do |game| puts "#{game}".upcase end
+    list_of_games.each do |game| puts "#{game}".upcase end
   end
 
   # logon function
