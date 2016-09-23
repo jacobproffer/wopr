@@ -1,8 +1,10 @@
 class WOPR
 
-  attr_accessor :list_of_games
+  attr_accessor :users, :list_of_games
 
-  def initialize()
+  def initialize
+    # users
+    @users = []
     # list of games array
     @list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   end
@@ -13,19 +15,17 @@ class WOPR
   end
 
   # list games function
-  def list_games()
+  def list_games
     # Print each game of the list_of_games array on a new line
     list_of_games.each do |game| puts "#{game}".upcase end
   end
 
   # logon function
   def logon
-    # authorized_user
-    authorized_user = false
     # user variable
     user = ""
     # while user is not equal to "joshua"
-    while user != "joshua" && authorized_user == false
+    while user != "joshua"
       # prompt the user to log on
       print "Logon: ".upcase
       # store user input in variable user
@@ -53,10 +53,10 @@ class WOPR
         # print the string
         puts "Connection terminated".upcase
         # break out of the loop
-        break
+        exit
       end
     end
-    return authorized_user
+    yield
   end
 
   # response function
