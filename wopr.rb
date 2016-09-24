@@ -9,18 +9,15 @@ class WOPR
     @list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   end
 
-  # help games function
   def help_games
     puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
   end
 
-  # list games function
   def list_games
     # Print each game of the list_of_games array on a new line
     list_of_games.each do |game| puts "#{game}".upcase end
   end
 
-  # logon function
   def logon
     # user variable
     user = ""
@@ -59,13 +56,11 @@ class WOPR
     yield
   end
 
-  # response function
   def response
     response = gets.chomp.downcase
     return response
   end
 
-  # greet user function
   def greet_user
     # print the string
     puts "Greeting Professor Falken.".upcase
@@ -80,9 +75,17 @@ class WOPR
     end
   end
 
-  # play game function
   def play_game
     puts "Shall we play a game?".upcase
+  end
+
+  # run method
+  def run
+    logon do
+      greet_user
+      sleep 1
+      play_game
+    end
   end
 
 end

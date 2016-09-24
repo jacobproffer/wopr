@@ -1,9 +1,6 @@
+# load wopr class
 require './wopr.rb'
-
+# create instance of wopr class
 wopr = WOPR.new()
-
-wopr.logon do
-  wopr.greet_user
-  sleep 1
-  wopr.play_game
-end
+# call run method
+wopr.run
