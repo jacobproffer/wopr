@@ -79,7 +79,6 @@ class WOPR
     puts "Shall we play a game?".upcase
   end
 
-  # run method
   def run
     logon do
       greet_user
