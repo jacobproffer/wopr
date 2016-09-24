@@ -3,9 +3,9 @@ class WOPR
   attr_accessor :users, :list_of_games
 
   def initialize
-    # users
+    # array of users
     @users = []
-    # list of games array
+    # array of games
     @list_of_games = ["Falken's Maze", "Black Jack", "Gin Rummy", "Hearts", "Bridge", "Checkers", "Chess", "Poker", "Fighter Combat", "Guerrilla Engagement", "Desert Warfare", "Air-to-Ground Actions", "Theatrewide Tactical Warfare", "Theatrewide Biotoxic and Chemical Warfare", "Global Thermonuclear War"]
   end
 
@@ -29,8 +29,6 @@ class WOPR
       user = gets.chomp.downcase
       # if user is equal to "joshua"
       if user == "joshua"
-        # set condition of authorized_user
-        authorized_user = true
         # break out of the loop
         break
       # Otherwise, if user is equal to "help"
@@ -40,11 +38,11 @@ class WOPR
       # Otherwise, if user is equal to "help games"
       elsif user == "help games"
         # call the help_games function
-        help_games()
+        help_games
       # Otherwise, if user is equal to "list games"
       elsif user == "list games"
         # call the list_games function
-        list_games()
+        list_games
       # Otherwise
       else
         # print the string
@@ -57,24 +55,23 @@ class WOPR
   end
 
   def response
-    response = gets.chomp.downcase
-    return response
+    return response = gets.chomp.downcase
   end
 
   def greet_user
-    # print the string
     puts "Greeting Professor Falken.".upcase
-    response()
+    response
     puts "How are you feeling today?".upcase
-    response()
+    response
     puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
-    if response() == "people make mistakes".downcase
+    if response == "people make mistakes".downcase
       puts "Yes they do.".upcase
     else
       puts "I'm sure you had your reasons.".upcase
     end
   end
 
+  # This needs work
   def play_game
     puts "Shall we play a game?".upcase
   end
