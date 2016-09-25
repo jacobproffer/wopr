@@ -55,7 +55,7 @@ class WOPR
   def response
     response = gets.chomp.downcase
     if response == "logoff"
-      print "Goodbye, Professor Falken.".upcase
+      puts "Goodbye, Professor Falken.".upcase
       exit
     else
       return response
