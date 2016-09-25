@@ -46,16 +46,20 @@ class WOPR
       # Otherwise
       else
         # print the string
-        puts "Connection terminated".upcase
-        # break out of the loop
-        exit
+        puts "Syntax Error - Command not recognized".upcase
       end
     end
     yield
   end
 
   def response
-    return response = gets.chomp.downcase
+    response = gets.chomp.downcase
+    if response == "logoff"
+      print "Goodbye, Professor Falken.".upcase
+      exit
+    else
+      return response
+    end
   end
 
   def greet_user
