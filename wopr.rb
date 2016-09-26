@@ -85,38 +85,31 @@ class WOPR
     yield
   end
 
-  def response
-    response = gets.chomp.downcase
-    if response == "logoff"
-      new_line
-      puts "Goodbye, Professor Falken.".upcase
-      exit
-    else
-      return response
-    end
-  end
-
   def greet_user
     new_line
     puts "Greeting Professor Falken.".upcase
-    response
+    new_line
+    user_response_1 = gets.chomp
     new_line
     puts "How are you feeling today?".upcase
-    response
+    new_line
+    user_response_2 = gets.chomp
     new_line
     puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
-    if response == "people make mistakes".downcase
+    new_line
+    user_response_3 = gets.chomp.downcase.gsub(".","")
+    if user_response_3 == "people sometimes make mistakes"
       new_line
       puts "Yes they do.".upcase
     else
       new_line
       puts "I'm sure you had your reasons.".upcase
+      new_line
     end
   end
 
   # This needs work
   def play_game
-    new_line
     puts "Shall we play a game?".upcase
   end
 
