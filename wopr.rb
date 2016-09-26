@@ -79,7 +79,7 @@ class WOPR
         puts "Identification not recognized by system".upcase
         puts "--Connection terminated--".upcase
         sleep 2
-        new_line
+        exit
       end
     end
     yield
