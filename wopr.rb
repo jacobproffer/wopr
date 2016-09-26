@@ -25,6 +25,10 @@ class WOPR
     ]
   end
 
+  def new_line
+    puts "\n"
+  end
+
   def help_games
     puts "'Games' refers to models, simulations, and games which have tactical, and strategic applications.".upcase
   end
@@ -52,20 +56,30 @@ class WOPR
         break
       # Otherwise, if user is equal to "help"
       elsif user == "help"
+        new_line
         # print the string
         puts "No help available.".upcase
+        new_line
       # Otherwise, if user is equal to "help games"
       elsif user == "help games"
+        new_line
         # call the help_games function
         help_games
+        new_line
       # Otherwise, if user is equal to "list games"
       elsif user == "list games"
+        new_line
         # call the list_games function
         list_games
+        new_line
       # Otherwise
       else
         # print the string
-        puts "Syntax Error - Command not recognized".upcase
+        new_line
+        puts "Identification not recognized by system".upcase
+        puts "--Connection terminated--".upcase
+        sleep 2
+        new_line
       end
     end
     yield
@@ -74,6 +88,7 @@ class WOPR
   def response
     response = gets.chomp.downcase
     if response == "logoff"
+      new_line
       puts "Goodbye, Professor Falken.".upcase
       exit
     else
@@ -82,20 +97,26 @@ class WOPR
   end
 
   def greet_user
+    new_line
     puts "Greeting Professor Falken.".upcase
     response
+    new_line
     puts "How are you feeling today?".upcase
     response
+    new_line
     puts "Excellent, it's been a long time. Can you explain the removal of your user account on June 23 1973?".upcase
     if response == "people make mistakes".downcase
+      new_line
       puts "Yes they do.".upcase
     else
+      new_line
       puts "I'm sure you had your reasons.".upcase
     end
   end
 
   # This needs work
   def play_game
+    new_line
     puts "Shall we play a game?".upcase
   end
 
