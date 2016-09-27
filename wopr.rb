@@ -36,8 +36,13 @@ class WOPR
   def list_games
     # Print each game of the list_of_games array on a new line
     list_of_games.each { |game|
-      puts "#{game}".upcase
-      sleep 1
+      if game == "Global Thermonuclear War"
+        new_line
+        puts "#{game}".upcase
+      else
+        puts "#{game}".upcase
+        sleep 1
+      end
     }
   end
 
