@@ -105,17 +105,45 @@ class WOPR
     user_response_3 = gets.chomp.downcase.gsub(".","")
     if user_response_3 == "people sometimes make mistakes"
       new_line
-      puts "Yes they do.".upcase
+      print "Yes they do. ".upcase
+      sleep 1
     else
       new_line
-      puts "I'm sure you had your reasons.".upcase
-      new_line
+      print "I'm sure you had your reasons. ".upcase
+      sleep 1
     end
   end
 
-  # This needs work
+  # this method needs work
   def play_game
-    puts "Shall we play a game?".upcase
+    # user response variable
+    user_response_1 = ""
+    # while user response does not include the phrase 'global thermonuclear war'
+    while !user_response_1.include? "global thermonuclear war"
+      # ask the user if they'd like to play a game
+      puts "Shall we play a game?".upcase
+      new_line
+      user_response_1 = gets.chomp.downcase
+      # if user response includes 'global thermonuclear war'
+      if user_response_1.include? "global thermonuclear war"
+        new_line
+        # ask the user if they'd prefer to play a game of chess
+        puts "Wouldn't you prefer a good game of chess?".upcase
+        new_line
+        user_response_2 = gets.chomp.downcase
+        new_line
+        # if user response includes the phrase "later"
+        if user_response_2.include? "later"
+          puts "Fine.".upcase
+          # break out of the loop
+          break
+        end
+      elsif user_response_1.include? "yes"
+        new_line
+        puts "Which game shall we play?".upcase
+        list_games
+      end
+    end
   end
 
   def run
