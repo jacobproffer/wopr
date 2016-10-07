@@ -3,8 +3,6 @@ class WOPR
   attr_accessor :users, :list_of_games
 
   def initialize
-    # array of users
-    @users = []
     # array of games
     @list_of_games = [
       "Falken's Maze",
@@ -62,7 +60,6 @@ class WOPR
       # Otherwise, if user is equal to "help"
       elsif user == "help"
         new_line
-        # print the string
         puts "No help available.".upcase
         new_line
       # Otherwise, if user is equal to "help games"
@@ -79,7 +76,6 @@ class WOPR
         new_line
       # Otherwise
       else
-        # print the string
         new_line
         puts "Identification not recognized by system".upcase
         puts "--Connection terminated--".upcase
@@ -141,7 +137,6 @@ class WOPR
       elsif user_response_1.include? "yes"
         new_line
         puts "Which game shall we play?".upcase
-        list_games
       end
     end
   end
