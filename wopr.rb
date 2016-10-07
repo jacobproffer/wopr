@@ -1,6 +1,6 @@
 class WOPR
 
-  attr_accessor :users, :list_of_games
+  attr_accessor :list_of_games
 
   def initialize
     # array of games
